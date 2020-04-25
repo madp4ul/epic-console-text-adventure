@@ -9,16 +9,29 @@ namespace TextAdventure
     {
         static void Main()
         {
-            var startElements = LoadDefaultStory().GetStartElements();
-
-            int randomStartIndex = new Random().Next(startElements.Count);
-
-            StoryElement decisionPoint = startElements[randomStartIndex];
+            var decisionPoint = GetStart();
 
             while (decisionPoint != null)
             {
                 Console.Clear();
                 decisionPoint = decisionPoint.Display();
+            }
+        }
+
+        private static StoryElement GetStart()
+        {
+            try
+            {
+                var startElements = LoadDefaultStory().GetStartElements();
+
+                int randomStartIndex = new Random().Next(startElements.Count);
+
+                return startElements[randomStartIndex];
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine($"Error loading story: {ex.Message}");
+                return null;
             }
         }
 

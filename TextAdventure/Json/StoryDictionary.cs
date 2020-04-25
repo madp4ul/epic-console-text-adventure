@@ -24,9 +24,18 @@ namespace TextAdventure.Json
 
                 foreach (var choice in e.ChoiceMappings)
                 {
+                    if (!ChoiceMappings.TryGetValue(choice.Key, out string choiceText))
+                    {
+                        throw new ArgumentException($"Event '{item.Key}' has '{choice.Key}' listed in its choices but a choice text with that key doesnt exist.");
+                    }
+                    if (!storyDictionary.TryGetValue(choice.Value, out StoryElement nextChoiceKey))
+                    {
+                        throw new ArgumentException($"'{choice.Value}' was listed as choice result but there is no event with that key.");
+                    }
+
                     story.Choices.Add(new StoryChoice(
-                       choice: ChoiceMappings[choice.Key],
-                       next: storyDictionary[choice.Value]));
+                       choice: choiceText,
+                       next: nextChoiceKey));
                 }
             }
 
@@ -34,7 +43,12 @@ namespace TextAdventure.Json
 
             foreach (var key in StartEvents)
             {
+                if (!storyDictionary.TryGetValue(key, out StoryElement story))
+                {
+                    throw new ArgumentException($"'{key}' was listed as start event but there is no event with that key.");
+                }
                 result.Add(storyDictionary[key]);
+
             }
 
             return result;
