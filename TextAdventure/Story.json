@@ -1,0 +1,37 @@
+{
+  "Events": {
+    "Start": {
+      "Story": "You are somewhere",
+      "ChoiceMappings": {
+        "Continue": "TheRoad"
+      }
+    },
+    "TheRoad": {
+      "Story": "You follow a road",
+      "ChoiceMappings": {
+        "Continue": "BryansHouse"
+      }
+    },
+    "BryansHouse": {
+      "Story": "You are at bryan`s house.",
+      "ChoiceMappings": {
+        "Knock": "BryanNotHome",
+        "Leave": "Start"
+      }
+    },
+    "BryanNotHome": {
+      "Story": "Nobody is answering.",
+      "ChoiceMappings": {
+        "Leave": "Start"
+      }
+    }
+  },
+  "ChoiceMappings": {
+    "Continue": "You walk for a while.",
+    "Knock": "You knock at the door.",
+    "Leave": "You decide to leave."
+  },
+  "StartEvents": [
+    "Start"
+  ]
+}
