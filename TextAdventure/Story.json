@@ -22,14 +22,36 @@
     "BryanNotHome": {
       "Story": "Nobody is answering.",
       "ChoiceMappings": {
-        "Leave": "Start"
+        "Leave": "Start",
+        "BreakIn": "BryansRoom"
+      }
+    },
+    "BryansRoom": {
+      "Story": "You are in bryans room.",
+      "ChoiceMappings": {
+        "StealPC": "StealPC"
+      }
+    },
+    "StealPC": {
+      "Story": "Bryans PC is now yours. You leave his room",
+      "ChoiceMappings": {
+        "PlayGame": "PlayCS"
+      }
+    },
+    "PlayCS": {
+      "Story": "You play counter strike. You get rekked",
+      "ChoiceMappings": {
+        "Leave": "BryansHouse"
       }
     }
   },
   "ChoiceMappings": {
     "Continue": "You walk for a while.",
     "Knock": "You knock at the door.",
-    "Leave": "You decide to leave."
+    "Leave": "You decide to leave.",
+    "BreakIn": "You decide to break in.",
+    "StealPC": "You decide to steal bryans PC",
+    "PlayGame": "You play a game on bryans PC"
   },
   "StartEvents": [
     "Start"
