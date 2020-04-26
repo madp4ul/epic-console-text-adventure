@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
+using TextAdventure.Exceptions;
 using TextAdventure.Json;
 
 namespace TextAdventure
@@ -28,7 +29,7 @@ namespace TextAdventure
 
                 return startElements[randomStartIndex];
             }
-            catch (ArgumentException ex)
+            catch (StoryParseException ex)
             {
                 Console.WriteLine($"Error loading story: {ex.Message}");
                 return null;
