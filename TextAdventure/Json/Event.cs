@@ -7,6 +7,6 @@ namespace TextAdventure.Json
     class Event
     {
         public string Story { get; set; }
-        public Dictionary<string, string> ChoiceMappings { get; set; }
+        public Dictionary<string, string> Choices { get; set; }
     }
 }

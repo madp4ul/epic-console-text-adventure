@@ -9,7 +9,7 @@ namespace TextAdventure.Json
     class StoryDictionary
     {
         public Dictionary<string, Event> Events = new Dictionary<string, Event>();
-        public Dictionary<string, string> ChoiceMappings = new Dictionary<string, string>();
+        public Dictionary<string, string> ChoiceTexts = new Dictionary<string, string>();
         public string[] StartEvents = new string[0];
 
         public List<StoryElement> GetStartElements()
@@ -23,9 +23,9 @@ namespace TextAdventure.Json
                 Event e = Events[item.Key];
                 var story = item.Value;
 
-                foreach (var choice in e.ChoiceMappings)
+                foreach (var choice in e.Choices)
                 {
-                    if (!ChoiceMappings.TryGetValue(choice.Key, out string choiceText))
+                    if (!ChoiceTexts.TryGetValue(choice.Key, out string choiceText))
                     {
                         throw new StoryParseException($"Event '{item.Key}' has '{choice.Key}' listed in its choices but a choice text with that key doesnt exist.");
                     }

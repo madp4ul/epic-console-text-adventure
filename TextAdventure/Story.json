@@ -2,50 +2,50 @@
   "Events": {
     "Start": {
       "Story": "You are somewhere",
-      "ChoiceMappings": {
+      "Choices": {
         "Continue": "TheRoad"
       }
     },
     "TheRoad": {
       "Story": "You follow a road",
-      "ChoiceMappings": {
+      "Choices": {
         "Continue": "BryansHouse"
       }
     },
     "BryansHouse": {
       "Story": "You are at bryan`s house.",
-      "ChoiceMappings": {
+      "Choices": {
         "Knock": "BryanNotHome",
         "Leave": "Start"
       }
     },
     "BryanNotHome": {
       "Story": "Nobody is answering.",
-      "ChoiceMappings": {
+      "Choices": {
         "Leave": "Start",
         "BreakIn": "BryansRoom"
       }
     },
     "BryansRoom": {
       "Story": "You are in bryans room.",
-      "ChoiceMappings": {
+      "Choices": {
         "StealPC": "StealPC"
       }
     },
     "StealPC": {
       "Story": "Bryans PC is now yours. You leave his room",
-      "ChoiceMappings": {
+      "Choices": {
         "PlayGame": "PlayCS"
       }
     },
     "PlayCS": {
       "Story": "You play counter strike. You get rekked",
-      "ChoiceMappings": {
+      "Choices": {
         "Leave": "BryansHouse"
       }
     }
   },
-  "ChoiceMappings": {
+  "ChoiceTexts": {
     "Continue": "You walk for a while.",
     "Knock": "You knock at the door.",
     "Leave": "You decide to leave.",
